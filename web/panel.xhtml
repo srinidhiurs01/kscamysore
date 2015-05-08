@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"   
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+            xmlns:p="http://primefaces.org/ui"
+                
+            xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:body>
+ 
+    	<ui:composition template="template/common/commonLayout.xhtml">
+            <ui:define name="content">
+            <h:form id="form">           
+<!--    <p:growl id="msgs" showDetail="true" />-->
+<h3 style="margin-top:0">Client</h3>
+    <p:clock />
+ <h3 style="margin-top:0">Basic</h3>
+<p:separator />
+ 
+<h3>Custom</h3>
+<p:separator style="width:500px;height:20px" />
+    <h3>Server</h3>
+    <p:clock pattern="HH:mm:ss dd.MM.yyyy" mode="server" />
+ 
+    
+    
+    <p:toolbar id="tb">
+    <f:facet name="left">
+        <p:commandButton type="button" value="New" icon="ui-icon-document" />
+        <p:commandButton type="button" value="Open" icon="ui-icon-folder-open"/>
+    </f:facet>
+    <f:facet name="right">
+        <p:commandButton type="button" title="Save" icon="ui-icon-disk"/>
+        <p:commandButton type="button" title="Delete" icon="ui-icon-trash"/>
+        <p:commandButton type="button" title="Print" icon="ui-icon-print"/>
+    </f:facet>
+</p:toolbar>
+ 
+<div style="height:800px"></div>
+ 
+<p:sticky target="tb" />
+    
+    
+    
+    <h3 style="margin-top:0">Basic</h3>
+   <p:accordionPanel>
+        <p:tab title="Godfather Part I">
+            <h:panelGrid columns="2" cellpadding="10">
+                <p:graphicImage name="resources/unnamed.jpg" />
+                <h:outputText
+                    value="The story begins as Don Vito Corleone..." />
+            </h:panelGrid>
+        </p:tab>
+        <p:tab title="Godfather Part II">
+            <h:panelGrid columns="2" cellpadding="10">
+                <p:graphicImage name="resources/unnamed.jpg" />
+                <h:outputText value="Francis Ford Coppola's legendary..." />
+            </h:panelGrid>
+        </p:tab>
+        <p:tab title="Godfather Part III">
+            <h:panelGrid columns="2" cellpadding="10">
+                <p:graphicImage name="resources/unnamed.jpg" />
+                <h:outputText value="After a break of more than 15 years..." />
+            </h:panelGrid>
+        </p:tab>
+    </p:accordionPanel>
+ 
+   <h3>Multiple Selection</h3>
+    <p:accordionPanel multiple="true">
+        <p:tab title="Godfather Part I">
+            <h:panelGrid columns="2" cellpadding="10">
+                <p:graphicImage name="resources/unnamed.jpg" />
+                <h:outputText
+                    value="The story begins as Don Vito Corleone..." />
+            </h:panelGrid>
+        </p:tab>
+        <p:tab title="Godfather Part II">
+            <h:panelGrid columns="2" cellpadding="10">
+                <p:graphicImage name="resources/unnamed.jpg" />
+                <h:outputText value="Francis Ford Coppola's legendary..." />
+            </h:panelGrid>
+        </p:tab>
+        <p:tab title="Godfather Part III">
+            <h:panelGrid columns="2" cellpadding="10">
+                <p:graphicImage name="resources/unnamed.jpg" />
+                <h:outputText value="After a break of more than 15 years...." />
+            </h:panelGrid>
+        </p:tab>
+    </p:accordionPanel>
+
+    <h3>On-Demand Loading</h3>
+    <p:accordionPanel dynamic="true" cache="true">
+        <p:tab title="Godfather Part I">
+            <h:panelGrid columns="2" cellpadding="10">
+                <p:graphicImage name="resources/unnamed.jpg" />
+                <h:outputText
+                    value="The story begins as Don Vito Corleone..." />
+            </h:panelGrid>
+        </p:tab>
+        <p:tab title="Godfather Part II">
+            <h:panelGrid columns="2" cellpadding="10">
+                <p:graphicImage name="resources/unnamed.jpg" />
+                <h:outputText value="Francis Ford Coppola's legendary..." />
+            </h:panelGrid>
+        </p:tab>
+        <p:tab title="Godfather Part III">
+            <h:panelGrid columns="2" cellpadding="10">
+                <p:graphicImage name="resources/unnamed.jpg" />
+                <h:outputText value="After a break of more than 15 years..." />
+            </h:panelGrid>
+        </p:tab>
+    </p:accordionPanel>
+ 
+<!--    <h3>Change Event</h3>
+    <p:accordionPanel>
+        <p:ajax event="tabChange" listener="#{tabbedView.onTabChange}" update=":form:msgs" />
+        <p:ajax event="tabClose" listener="#{tabbedView.onTabClose}" update=":form:msgs" />
+ 
+        <p:tab title="Godfather Part I">
+            <h:panelGrid columns="2" cellpadding="10">
+                <p:graphicImage name="demo/images/godfather/godfather1.jpg" />
+                <h:outputText
+                    value="The story begins as Don Vito Corleone..." />
+            </h:panelGrid>
+        </p:tab>
+        <p:tab title="Godfather Part II">
+            <h:panelGrid columns="2" cellpadding="10">
+                <p:graphicImage name="demo/images/godfather/godfather2.jpg" />
+                <h:outputText value="Francis Ford Coppola's legendary..." />
+            </h:panelGrid>
+        </p:tab>
+        <p:tab title="Godfather Part III">
+            <h:panelGrid columns="2" cellpadding="10">
+                <p:graphicImage name="demo/images/godfather/godfather3.jpg" />
+                <h:outputText value="After a break of more than 15 years..." />
+            </h:panelGrid>
+        </p:tab>
+    </p:accordionPanel>
+ -->
+<!--    <h3>DataModel</h3>
+    <p:accordionPanel value="#{tabbedView.cars}" var="car">
+        <p:tab title="Car - #{car.id}">
+            <h:panelGrid columns="2" cellpadding="5">
+                <f:facet name="header">
+                    <p:graphicImage name="demo/images/car/#{car.brand}-big.gif" />
+                </f:facet>                    
+                <h:outputText value="Brand:" style="font-weight: bold" />
+                <h:outputText value="#{car.brand}" />
+ 
+                <h:outputText value="Year:" style="font-weight: bold" />
+                <h:outputText value="#{car.year}" />
+ 
+                <h:outputText value="Color:" style="font-weight: bold" />
+                <h:outputText value="#{car.color}" />
+            </h:panelGrid>
+        </p:tab>
+    </p:accordionPanel>-->
+<p:growl id="msgs" showDetail="true" />
+ 
+    <h3 style="margin-top:0">Basic</h3>
+    <p:tabView>
+        <p:tab title="Godfather Part I">
+            <h:panelGrid columns="2" cellpadding="10">
+                <p:graphicImage name="demo/images/godfather/godfather1.jpg" />
+                <h:outputText
+                    value="The story begins as Don Vito Corleone..." />
+            </h:panelGrid>
+        </p:tab>
+        <p:tab title="Godfather Part II">
+            <h:panelGrid columns="2" cellpadding="10">
+                <p:graphicImage name="demo/images/godfather/godfather2.jpg" />
+                <h:outputText value="Francis Ford Coppola's legendary..." />
+            </h:panelGrid>
+        </p:tab>
+        <p:tab title="Godfather Part III">
+            <h:panelGrid columns="2" cellpadding="10">
+                <p:graphicImage name="demo/images/godfather/godfather3.jpg" />
+                <h:outputText value="After a break of more than 15 years..." />
+            </h:panelGrid>
+        </p:tab>
+    </p:tabView>
+     <p:toolbar>
+        <f:facet name="left">
+            <p:commandButton type="button" value="New" icon="ui-icon-document" />
+ 
+            <p:commandButton type="button" value="Open" icon="ui-icon-folder-open" />
+ 
+            <span class="ui-separator">
+                <span class="ui-icon ui-icon-grip-dotted-vertical" />
+            </span>
+ 
+            <p:commandButton type="button" title="Save" icon="ui-icon-disk" />
+            <p:commandButton type="button" title="Delete" icon="ui-icon-trash" />
+            <p:commandButton type="button" title="Print" icon="ui-icon-print" />
+        </f:facet>
+ 
+        <f:facet name="right">
+            <p:menuButton value="Options">
+                <p:menuitem value="Save" actionListener="#{toolbarView.save}" update="messages" icon="ui-icon-disk" />
+                <p:menuitem value="Update" actionListener="#{toolbarView.update}" update="messages" icon="ui-icon-arrowrefresh-1-w" />
+                <p:menuitem value="Delete" actionListener="#{toolbarView.delete}" ajax="false" icon="ui-icon-close" />
+                <p:menuitem value="Homepage" url="http://www.primefaces.org" icon="ui-icon-extlink" />
+            </p:menuButton>
+        </f:facet>
+ 
+    </p:toolbar>
+    <h3>Orientation - Top|Bottom|Left|Right</h3>
+    <p:tabView orientation="left">
+        <p:tab title="Godfather Part I">
+            <h:panelGrid columns="2" cellpadding="10">
+                <p:graphicImage name="demo/images/godfather/godfather1.jpg" />
+                <h:outputText
+                    value="The story begins as Don Vito Corleone..." />
+            </h:panelGrid>
+        </p:tab>
+        <p:tab title="Godfather Part II">
+            <h:panelGrid columns="2" cellpadding="10">
+                <p:graphicImage name="demo/images/godfather/godfather2.jpg" />
+                <h:outputText value="Francis Ford Coppola's legendary..." />
+            </h:panelGrid>
+        </p:tab>
+        <p:tab title="Godfather Part III">
+            <h:panelGrid columns="2" cellpadding="10">
+                <p:graphicImage name="demo/images/godfather/godfather3.jpg" />
+                <h:outputText value="After a break of more than 15 years..." />
+            </h:panelGrid>
+        </p:tab>
+    </p:tabView>
+    
+      <p:growl id="message" showDetail="true" />
+ 
+    <p:commandButton value="Destroy the World" actionListener="#{dialogView.destroyWorld}" update="message">
+        <p:confirm header="Confirmation" message="Are you sure?" icon="ui-icon-alert" />
+    </p:commandButton>
+ 
+    <p:confirmDialog global="true" showEffect="fade" hideEffect="explode">
+        <p:commandButton value="Yes" type="button" styleClass="ui-confirmdialog-yes" icon="ui-icon-check" />
+        <p:commandButton value="No" type="button" styleClass="ui-confirmdialog-no" icon="ui-icon-close" />
+    </p:confirmDialog>
+ 
+   
+</h:form>
+                </ui:define>
+    	</ui:composition>
+        
+ 
+    </h:body>
+ 
+</html>

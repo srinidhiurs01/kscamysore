@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ListKscaTeamTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:form styleClass="jsfcrud_list_form">
+                <h:panelGroup id="messagePanel" layout="block">
+                    <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+                </h:panelGroup>
+                <h:outputText escape="false" value="#{bundle.ListKscaTeamEmpty}" rendered="#{kscaTeamController.items.rowCount == 0}"/>
+                <h:panelGroup rendered="#{kscaTeamController.items.rowCount > 0}">
+                    <h:outputText value="#{kscaTeamController.pagination.pageFirstItem + 1}..#{kscaTeamController.pagination.pageLastItem + 1}/#{kscaTeamController.pagination.itemsCount}"/>&nbsp;
+                    <h:commandLink action="#{kscaTeamController.previous}" value="#{bundle.Previous} #{kscaTeamController.pagination.pageSize}" rendered="#{kscaTeamController.pagination.hasPreviousPage}"/>&nbsp;
+                    <h:commandLink action="#{kscaTeamController.next}" value="#{bundle.Next} #{kscaTeamController.pagination.pageSize}" rendered="#{kscaTeamController.pagination.hasNextPage}"/>&nbsp;
+                    <h:dataTable value="#{kscaTeamController.items}" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px">
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListKscaTeamTitle_recordId}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.recordId}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListKscaTeamTitle_teamName}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.teamName}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListKscaTeamTitle_teamId}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.teamId}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListKscaTeamTitle_divisionVarchar}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.divisionVarchar}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="&nbsp;"/>
+                            </f:facet>
+                            <h:commandLink action="#{kscaTeamController.prepareView}" value="#{bundle.ListKscaTeamViewLink}"/>
+                            <h:outputText value=" "/>
+                            <h:commandLink action="#{kscaTeamController.prepareEdit}" value="#{bundle.ListKscaTeamEditLink}"/>
+                            <h:outputText value=" "/>
+                            <h:commandLink action="#{kscaTeamController.destroy}" value="#{bundle.ListKscaTeamDestroyLink}"/>
+                        </h:column>
+                    </h:dataTable>
+                </h:panelGroup>
+                <br />
+                <h:commandLink action="#{kscaTeamController.prepareCreate}" value="#{bundle.ListKscaTeamCreateLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ListKscaTeamIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"   
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+            xmlns:p="http://primefaces.org/ui"
+             xmlns:f="http://xmlns.jcp.org/jsf/core"
+      >
+    <h:body>
+ 
+    	<ui:composition template="template/common/commonLayout.xhtml">
+            
+            <ui:define name="content">
+<!--    			<h2>This is page1 content</h2>
+                        <h:form>               
+ <p:inputText />
+ <p:inputText />
+ <p:inputText />
+ <p:inputText />
+ <p:inputText />	
+</h:form>-->
+
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="4">
+                    <h:outputLabel value="First Name" for="consultantId" />
+                    <h:inputText id="consultantId" value="" title="#{bundle.CreateConsultantTitle_consultantId}" required="true" requiredMessage="#{bundle.CreateConsultantRequiredMessage_consultantId}"/>
+                    <h:outputLabel value="First Name" for="consultantId" />
+                    <h:inputText id="hireDate" value="" title="#{bundle.CreateConsultantTitle_hireDate}" >
+                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                    </h:inputText>
+                    
+                    
+                    
+                    </h:panelGrid>
+<!--                    <h:outputLabel value="#{bundle.CreateConsultantLabel_email}" for="email" />
+                    <h:inputText id="email" value="#{consultantController.selected.email}" title="#{bundle.CreateConsultantTitle_email}" required="true" requiredMessage="#{bundle.CreateConsultantRequiredMessage_email}"/>
+                    <h:outputLabel value="#{bundle.CreateConsultantLabel_hireDate}" for="hireDate" />
+                    <h:inputText id="hireDate" value="#{consultantController.selected.hireDate}" title="#{bundle.CreateConsultantTitle_hireDate}" >
+                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                    </h:inputText>
+                    <h:outputLabel value="#{bundle.CreateConsultantLabel_resume}" for="resume" />
+                    <h:inputTextarea rows="4" cols="30" id="resume" value="#{consultantController.selected.resume}" title="#{bundle.CreateConsultantTitle_resume}" />
+                    <h:outputLabel value="#{bundle.CreateConsultantLabel_statusId}" for="statusId" />
+                    <h:selectOneMenu id="statusId" value="#{consultantController.selected.statusId}" title="#{bundle.CreateConsultantTitle_statusId}" required="true" requiredMessage="#{bundle.CreateConsultantRequiredMessage_statusId}">
+                        <f:selectItems value="#{consultantStatusController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{bundle.CreateConsultantLabel_recruiterId}" for="recruiterId" />
+                    <h:selectOneMenu id="recruiterId" value="#{consultantController.selected.recruiterId}" title="#{bundle.CreateConsultantTitle_recruiterId}" >
+                        <f:selectItems value="#{recruiterController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{consultantController.create}" value="#{bundle.CreateConsultantSaveLink}" />
+                <br />
+                <br />
+                <h:commandLink action="#{consultantController.prepareList}" value="#{bundle.CreateConsultantShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.CreateConsultantIndexLink}"/>-->
+            </h:form>
+        
+    		</ui:define>
+        
+    	</ui:composition>
+        
+ 
+    </h:body>
+ 
+</html>

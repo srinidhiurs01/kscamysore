@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.CreateKscaMatchTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.CreateKscaMatchLabel_recordId}" for="recordId" />
+                    <h:inputText id="recordId" value="#{kscaMatchController.selected.recordId}" title="#{bundle.CreateKscaMatchTitle_recordId}" required="true" requiredMessage="#{bundle.CreateKscaMatchRequiredMessage_recordId}"/>
+                    <h:outputLabel value="#{bundle.CreateKscaMatchLabel_date}" for="date" />
+                    <h:inputText id="date" value="#{kscaMatchController.selected.date}" title="#{bundle.CreateKscaMatchTitle_date}" >
+                        <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                    </h:inputText>
+                    <h:outputLabel value="#{bundle.CreateKscaMatchLabel_ground}" for="ground" />
+                    <h:inputText id="ground" value="#{kscaMatchController.selected.ground}" title="#{bundle.CreateKscaMatchTitle_ground}" />
+                    <h:outputLabel value="#{bundle.CreateKscaMatchLabel_team1}" for="team1" />
+                    <h:inputText id="team1" value="#{kscaMatchController.selected.team1}" title="#{bundle.CreateKscaMatchTitle_team1}" />
+                    <h:outputLabel value="#{bundle.CreateKscaMatchLabel_team2}" for="team2" />
+                    <h:inputText id="team2" value="#{kscaMatchController.selected.team2}" title="#{bundle.CreateKscaMatchTitle_team2}" />
+                    <h:outputLabel value="#{bundle.CreateKscaMatchLabel_umpire1}" for="umpire1" />
+                    <h:inputText id="umpire1" value="#{kscaMatchController.selected.umpire1}" title="#{bundle.CreateKscaMatchTitle_umpire1}" />
+                    <h:outputLabel value="#{bundle.CreateKscaMatchLabel_umpire2}" for="umpire2" />
+                    <h:inputText id="umpire2" value="#{kscaMatchController.selected.umpire2}" title="#{bundle.CreateKscaMatchTitle_umpire2}" />
+                    <h:outputLabel value="#{bundle.CreateKscaMatchLabel_scorer}" for="scorer" />
+                    <h:inputText id="scorer" value="#{kscaMatchController.selected.scorer}" title="#{bundle.CreateKscaMatchTitle_scorer}" />
+                    <h:outputLabel value="#{bundle.CreateKscaMatchLabel_tournamentType}" for="tournamentType" />
+                    <h:inputText id="tournamentType" value="#{kscaMatchController.selected.tournamentType}" title="#{bundle.CreateKscaMatchTitle_tournamentType}" />
+                    <h:outputLabel value="#{bundle.CreateKscaMatchLabel_tossWon}" for="tossWon" />
+                    <h:inputText id="tossWon" value="#{kscaMatchController.selected.tossWon}" title="#{bundle.CreateKscaMatchTitle_tossWon}" />
+                    <h:outputLabel value="#{bundle.CreateKscaMatchLabel_matchWon}" for="matchWon" />
+                    <h:inputText id="matchWon" value="#{kscaMatchController.selected.matchWon}" title="#{bundle.CreateKscaMatchTitle_matchWon}" />
+                    <h:outputLabel value="#{bundle.CreateKscaMatchLabel_runsOrWkts}" for="runsOrWkts" />
+                    <h:inputText id="runsOrWkts" value="#{kscaMatchController.selected.runsOrWkts}" title="#{bundle.CreateKscaMatchTitle_runsOrWkts}" />
+                    <h:outputLabel value="#{bundle.CreateKscaMatchLabel_runsOrWktsFlag}" for="runsOrWktsFlag" />
+                    <h:inputText id="runsOrWktsFlag" value="#{kscaMatchController.selected.runsOrWktsFlag}" title="#{bundle.CreateKscaMatchTitle_runsOrWktsFlag}" />
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{kscaMatchController.create}" value="#{bundle.CreateKscaMatchSaveLink}" />
+                <br />
+                <br />
+                <h:commandLink action="#{kscaMatchController.prepareList}" value="#{bundle.CreateKscaMatchShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.CreateKscaMatchIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

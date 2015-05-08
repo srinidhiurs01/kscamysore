@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"   
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+            xmlns:p="http://primefaces.org/ui"   
+            xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:body>
+ 
+    	<ui:composition template="template/common/commonLayout.xhtml">
+            <ui:define name="content">
+          <h:form>
+                 <p:layout style="min-width:400px;min-height:800px;">
+    <p:layoutUnit position="west" resizable="true" size="100" minSize="300" maxSize="300">
+         <p:panel id="basic" header="Match Details" style="margin-bottom:20px">
+       <p:growl id="growl" sticky="true" showDetail="true"/>
+    
+ <h:panelGrid columns="2" style="margin-bottom:10px" cellpadding="5">
+   
+          <p:outputLabel for="console" value="Match Date" />
+     <p:calendar id="inline" value="#{calendarView.date1}" mode="Popup" />
+            <p:outputLabel for="console" value="Ground" />
+        <p:selectOneMenu id="console9" value="#{selectOneMenuView.console}" style="width:125px">
+            <f:selectItem itemLabel="Select One" itemValue="" />
+            <f:selectItem itemLabel="Xbox One" itemValue="Xbox One" />
+            <f:selectItem itemLabel="PS4" itemValue="PS4" />
+            <f:selectItem itemLabel="Wii U" itemValue="Wii U" />
+        </p:selectOneMenu>
+            
+        <p:outputLabel for="console" value="Division" />
+        <p:selectOneMenu id="console" value="#{selectOneMenuView.console}" style="width:125px">
+            <f:selectItem itemLabel="Select One" itemValue="" />
+            <f:selectItem itemLabel="Xbox One" itemValue="Xbox One" />
+            <f:selectItem itemLabel="PS4" itemValue="PS4" />
+            <f:selectItem itemLabel="Wii U" itemValue="Wii U" />
+        </p:selectOneMenu>
+        
+         <p:outputLabel for="console" value="Team A" />
+        <p:selectOneMenu id="console1" value="#{selectOneMenuView.console}" style="width:125px">
+            <f:selectItem itemLabel="Select One" itemValue="" />
+            <f:selectItem itemLabel="Xbox One" itemValue="Xbox One" />
+            <f:selectItem itemLabel="PS4" itemValue="PS4" />
+            <f:selectItem itemLabel="Wii U" itemValue="Wii U" />
+        </p:selectOneMenu>
+         <p:outputLabel for="console" value="Team B" />
+        <p:selectOneMenu id="console2" value="#{selectOneMenuView.console}" style="width:125px">
+            <f:selectItem itemLabel="Select One" itemValue="" />
+            <f:selectItem itemLabel="Xbox One" itemValue="Xbox One" />
+            <f:selectItem itemLabel="PS4" itemValue="PS4" />
+            <f:selectItem itemLabel="Wii U" itemValue="Wii U" />
+        </p:selectOneMenu>
+         
+            <p:outputLabel for="console" value="Toss Won By" />
+        <p:selectOneMenu id="console3" value="#{selectOneMenuView.console}" style="width:125px">
+            <f:selectItem itemLabel="Select One" itemValue="" />
+            <f:selectItem itemLabel="Xbox One" itemValue="Xbox One" />
+            <f:selectItem itemLabel="PS4" itemValue="PS4" />
+            <f:selectItem itemLabel="Wii U" itemValue="Wii U" />
+        </p:selectOneMenu>
+   </h:panelGrid>
+    
+    </p:panel>   
+       <p:panel id="basic1" header="Match Officials" style="margin-bottom:20px">
+        
+               <h:panelGrid columns="2" style="margin-bottom:10px" cellpadding="5">
+                 <p:outputLabel for="console" value=" Umpire 1" />   
+        <p:selectOneMenu id="console6" value="#{selectOneMenuView.console}" style="width:125px">
+            <f:selectItem itemLabel="Select One" itemValue="" />
+            <f:selectItem itemLabel="Xbox One" itemValue="Xbox One" />
+            <f:selectItem itemLabel="PS4" itemValue="PS4" />
+            <f:selectItem itemLabel="Wii U" itemValue="Wii U" />
+        </p:selectOneMenu>
+                  <p:outputLabel for="console" value=" Umpire 2" />   
+        <p:selectOneMenu id="console7" value="#{selectOneMenuView.console}" style="width:125px">
+            <f:selectItem itemLabel="Select One" itemValue="" />
+            <f:selectItem itemLabel="Xbox One" itemValue="Xbox One" />
+            <f:selectItem itemLabel="PS4" itemValue="PS4" />
+            <f:selectItem itemLabel="Wii U" itemValue="Wii U" />
+        </p:selectOneMenu>
+           
+                   <p:outputLabel for="console" value=" Scorer" />   
+        <p:selectOneMenu id="console8" value="#{selectOneMenuView.console}" style="width:125px">
+            <f:selectItem itemLabel="Select One" itemValue="" />
+            <f:selectItem itemLabel="Xbox One" itemValue="Xbox One" />
+            <f:selectItem itemLabel="PS4" itemValue="PS4" />
+            <f:selectItem itemLabel="Wii U" itemValue="Wii U" />
+        </p:selectOneMenu>
+    </h:panelGrid>
+           </p:panel>  
+            <p:panel id="basic2" header="Result of the match" style="margin-bottom:20px">
+        
+               <h:panelGrid columns="2" style="margin-bottom:10px" cellpadding="5">
+                 <p:outputLabel for="console" value=" Match Won By" />   
+        <p:selectOneMenu id="console4" value="#{selectOneMenuView.console}" style="width:125px">
+            <f:selectItem itemLabel="Select One" itemValue="" />
+            <f:selectItem itemLabel="Xbox One" itemValue="Xbox One" />
+            <f:selectItem itemLabel="PS4" itemValue="PS4" />
+            <f:selectItem itemLabel="Wii U" itemValue="Wii U" />
+        </p:selectOneMenu>
+                   
+                    <p:inputText  style="width:90px"/>
+        <p:selectOneRadio id="console5" value="#{radioView.console}">
+            <f:selectItem itemLabel="Runs" itemValue="Xbox One" />
+            <f:selectItem itemLabel="Wickets" itemValue="PS+" />
+            
+        </p:selectOneRadio>
+    </h:panelGrid>
+        
+    </p:panel>   
+    </p:layoutUnit>
+ 
+    <p:layoutUnit position="center">
+     <h:panelGrid columns="2" style="margin-bottom:10px" cellpadding="5">
+        <p:panel id="basic3" header="Team A" style="margin-bottom:20px;width:475px" >
+        <h3 style="margin-top: 0">Playing Members</h3>
+    <p:pickList id="pickList" value="#{pickListView.cities}" var="cities" itemLabel="#{cities}" itemValue="#{cities}" />
+   </p:panel>   
+         <p:panel id="basic4" header="Team B" style="margin-bottom:20px;width:475px" >
+        <h3 style="margin-top: 0">Playing Members</h3>
+    <p:pickList id="pickList2" value="#{pickListView.cities}" var="cities" itemLabel="#{cities}" itemValue="#{cities}" />
+   </p:panel> 
+  </h:panelGrid>
+        <p:panel id="basic5" header="Score Card" style="margin-bottom:20px; " >
+            <!-- 
+             <h:panelGrid columns="2" style="margin-bottom:10px" cellpadding="5">
+                 <p:panel id="basic6" header="Innings of Team A" style="margin-bottom:20px;width:475px" >
+                     <p:dataTable var="car" value="#{pickListView.cities}" >
+    <p:column headerText="Name of the player">
+        <p:selectOneMenu id="advanced" value="#{selectOneMenuView.theme}"  panelStyle="width:180px"
+                         effect="fade" var="t" style="width:160px" filter="true" filterMatchMode="startsWith">
+             <f:selectItem itemLabel="Select One" itemValue="" />
+            <f:selectItem itemLabel="Xbox One" itemValue="Xbox One" />
+            <f:selectItem itemLabel="PS4" itemValue="PS4" />
+            <f:selectItem itemLabel="Wii U" itemValue="Wii U" />
+            </p:selectOneMenu>
+    </p:column>
+ 
+    <p:column headerText="Howout">
+        <h:outputText />
+    </p:column>
+ 
+    <p:column headerText="Runs">
+        <p:inputText  />
+    </p:column>
+ 
+    <p:column headerText="4s">
+     <p:inputText  />
+    </p:column>
+    <p:column headerText="6s">
+        <p:inputText  />
+    </p:column>
+</p:dataTable>
+                 </p:panel> 
+                     <p:panel id="basic7" header="Innings of Team A" style="margin-bottom:20px;width:475px" >
+                          </p:panel> 
+                 </h:panelGrid>-->
+            
+       <p:tabView  orientation="left">
+     <h3 style="margin-top: 0">1st innings</h3>
+         <p:outputLabel for="console" value="Ground" />
+        <p:tab title="1st innings" >
+             
+                     <p:dataTable var="car" value="#{pickListView.cities}" resizableColumns="true"  rows="10" >
+                         <p:column headerText="Serial No" width="50" >
+                               <h:outputText value="1"/>
+                              </p:column>
+    <p:column headerText="Name of the player" width="250" >
+        <p:selectOneMenu id="advanced" value="#{selectOneMenuView.theme}"  panelStyle="width:180px"
+                         effect="fade" var="t" style="width:250px" filter="true" filterMatchMode="startsWith">
+             <f:selectItem itemLabel="Select One" itemValue="" />
+            <f:selectItem itemLabel="Xbox One" itemValue="Xbox One" />
+            <f:selectItem itemLabel="PS4" itemValue="PS4" />
+            <f:selectItem itemLabel="Wii U" itemValue="Wii U" />
+            </p:selectOneMenu>
+    </p:column>
+ 
+    <p:column headerText="Howout" width="200" >
+         <h:panelGrid columns="1">
+               <p:selectOneMenu id="console46" value="#{selectOneMenuView.console}" style="width:180px">
+            <f:selectItem itemLabel="Select One" itemValue="" />
+            <f:selectItem itemLabel="Xbox One" itemValue="Xbox One" />
+            <f:selectItem itemLabel="PS4" itemValue="PS4" />
+            <f:selectItem itemLabel="Wii U" itemValue="Wii U" />
+        </p:selectOneMenu>
+             
+        <p:selectOneMenu id="a" value="#{selectOneMenuView.theme}"  panelStyle="width:180px"
+                         effect="fade" var="t" style="width:180px" filter="true" filterMatchMode="startsWith">
+             <f:selectItem itemLabel="Select One" itemValue="" />
+            <f:selectItem itemLabel="Xbox One" itemValue="Xbox One" />
+            <f:selectItem itemLabel="PS4" itemValue="PS4" />
+            <f:selectItem itemLabel="Wii U" itemValue="Wii U" />
+            </p:selectOneMenu>
+        
+        
+             </h:panelGrid>
+    </p:column>
+ 
+    <p:column headerText="Runs" width="50" >
+        <p:inputText style="width:40px" />
+    </p:column>
+ 
+    <p:column headerText="4s" width="50" >
+     <p:inputText style="width:40px" />
+    </p:column>
+    <p:column headerText="6s" width="50" >
+        <p:inputText style="width:40px" />
+    </p:column>
+</p:dataTable>
+                  
+        </p:tab>
+        <p:tab title="2nd innings">
+            <h:panelGrid columns="2" cellpadding="10">
+                <p:graphicImage name="demo/images/godfather/godfather2.jpg" />
+                <h:outputText value="Francis Ford Coppola's legendary..." />
+            </h:panelGrid>
+        </p:tab>
+     
+      </p:tabView>      
+            
+            
+            </p:panel> 
+
+
+
+
+    </p:layoutUnit>
+</p:layout>
+   
+              
+ 
+</h:form>
+                </ui:define>
+    	</ui:composition>
+        
+ 
+    </h:body>
+ 
+</html>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.CreateKscaPlayerTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.CreateKscaPlayerLabel_recordId}" for="recordId" />
+                    <h:inputText id="recordId" value="#{kscaPlayerController.selected.recordId}" title="#{bundle.CreateKscaPlayerTitle_recordId}" required="true" requiredMessage="#{bundle.CreateKscaPlayerRequiredMessage_recordId}"/>
+                    <h:outputLabel value="#{bundle.CreateKscaPlayerLabel_firstName}" for="firstName" />
+                    <h:inputText id="firstName" value="#{kscaPlayerController.selected.firstName}" title="#{bundle.CreateKscaPlayerTitle_firstName}" />
+                    <h:outputLabel value="#{bundle.CreateKscaPlayerLabel_lastName}" for="lastName" />
+                    <h:inputText id="lastName" value="#{kscaPlayerController.selected.lastName}" title="#{bundle.CreateKscaPlayerTitle_lastName}" />
+                    <h:outputLabel value="#{bundle.CreateKscaPlayerLabel_contactNumber}" for="contactNumber" />
+                    <h:inputText id="contactNumber" value="#{kscaPlayerController.selected.contactNumber}" title="#{bundle.CreateKscaPlayerTitle_contactNumber}" />
+                    <h:outputLabel value="#{bundle.CreateKscaPlayerLabel_emailId}" for="emailId" />
+                    <h:inputText id="emailId" value="#{kscaPlayerController.selected.emailId}" title="#{bundle.CreateKscaPlayerTitle_emailId}" />
+                    <h:outputLabel value="#{bundle.CreateKscaPlayerLabel_state}" for="state" />
+                    <h:inputText id="state" value="#{kscaPlayerController.selected.state}" title="#{bundle.CreateKscaPlayerTitle_state}" />
+                    <h:outputLabel value="#{bundle.CreateKscaPlayerLabel_city}" for="city" />
+                    <h:inputText id="city" value="#{kscaPlayerController.selected.city}" title="#{bundle.CreateKscaPlayerTitle_city}" />
+                    <h:outputLabel value="#{bundle.CreateKscaPlayerLabel_pincode}" for="pincode" />
+                    <h:inputText id="pincode" value="#{kscaPlayerController.selected.pincode}" title="#{bundle.CreateKscaPlayerTitle_pincode}" />
+                    <h:outputLabel value="#{bundle.CreateKscaPlayerLabel_street}" for="street" />
+                    <h:inputText id="street" value="#{kscaPlayerController.selected.street}" title="#{bundle.CreateKscaPlayerTitle_street}" />
+                    <h:outputLabel value="#{bundle.CreateKscaPlayerLabel_fkTeamId}" for="fkTeamId" />
+                    <h:inputText id="fkTeamId" value="#{kscaPlayerController.selected.fkTeamId}" title="#{bundle.CreateKscaPlayerTitle_fkTeamId}" />
+                    <h:outputLabel value="#{bundle.CreateKscaPlayerLabel_kscaPlayer}" for="kscaPlayer" />
+                    <h:selectOneMenu id="kscaPlayer" value="#{kscaPlayerController.selected.kscaPlayer}" title="#{bundle.CreateKscaPlayerTitle_kscaPlayer}" >
+                        <f:selectItems value="#{kscaPlayerController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{bundle.CreateKscaPlayerLabel_kscaPlayer1}" for="kscaPlayer1" />
+                    <h:selectOneMenu id="kscaPlayer1" value="#{kscaPlayerController.selected.kscaPlayer1}" title="#{bundle.CreateKscaPlayerTitle_kscaPlayer1}" required="true" requiredMessage="#{bundle.CreateKscaPlayerRequiredMessage_kscaPlayer1}">
+                        <f:selectItems value="#{kscaPlayerController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{kscaPlayerController.create}" value="#{bundle.CreateKscaPlayerSaveLink}" />
+                <br />
+                <br />
+                <h:commandLink action="#{kscaPlayerController.prepareList}" value="#{bundle.CreateKscaPlayerShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.CreateKscaPlayerIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>
